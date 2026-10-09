@@ -1,0 +1,27 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Holol — démo</title>
+<meta name="description" content="Holol : vos ventes du jour sur votre téléphone. Petite démo vidéo.">
+<meta property="og:title" content="Holol — démo"><meta property="og:description" content="Vos ventes du jour, sur votre téléphone."><meta property="og:image" content="https://demo.holol.app/v/ventes.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2305201d'/%3E%3Cpath fill='%23fff' d='M14 14h12v12h12v12h12v12H38V38H26v12H14z'/%3E%3C/svg%3E"><link rel="preconnect" href="https://api.fontshare.com"><link href="https://api.fontshare.com/v2/css?f[]=satoshi@500,700&display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"><style>:root{--ink:#11110f;--paper:#f7f6f2;--warm:#e9e4da;--soft:#5d5952;--white:#fff;--line:rgba(17,17,15,.12);--panel:#082522;--coral:#c75a4a;--moss:#4f735b}
+*{box-sizing:border-box}html,body{margin:0}body{background:var(--paper);color:var(--ink);font:15px/1.45 Inter,system-ui,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+.brand{display:flex;align-items:center;gap:10px;font:700 22px Satoshi,Inter,sans-serif;letter-spacing:-.06em}.brand svg{width:30px;height:30px}
+h1,h2,h3{font-family:Satoshi,Inter,sans-serif;letter-spacing:-.05em;margin:0}
+.btn{min-height:52px;display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:0 18px;border:0;border-radius:3px;background:var(--ink);color:#fff;font:700 15px Inter,sans-serif;text-decoration:none;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.btn:active{transform:translateY(1px)}.btn--wa{background:#1f7a4d}.btn--ghost{background:var(--warm);color:var(--ink)}.btn--line{background:#fff;color:var(--ink);border:1px solid var(--ink)}.btn--sm{min-height:42px;font-size:13px}
+.wrap{max-width:480px;margin:0 auto;padding:22px 16px 40px}
+.hero{background:var(--panel);color:#f3f5f2;margin:-22px -16px 20px;padding:22px 16px 26px}
+.hero h1{font-size:clamp(32px,9vw,44px);line-height:.98;margin:18px 0 8px}.hero p{margin:0;color:#aab9b4}
+.vid{background:#fff;border:1px solid var(--line);padding:14px;margin-bottom:16px}
+.vid h2{font-size:22px;margin:0 0 4px}.vid p{margin:0 0 12px;color:var(--soft);font-size:14px}
+video{display:block;width:100%;max-height:78vh;aspect-ratio:9/16;background:#000;object-fit:contain}
+.note{margin:10px 0 0!important;font-size:12px!important;color:var(--soft)}
+.reply{margin-top:18px}.hint{text-align:center;color:var(--soft);font-size:14px;margin:18px 0 0}
+footer{margin-top:26px;text-align:center;color:var(--soft);font-size:12px}</style></head><body><main class="wrap">
+<header class="hero"><div class="brand"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#05201d"/><path fill="#fff" d="M14 14h12v12h12v12h12v12H38V38H26v12H14z" shape-rendering="crispEdges"/></svg><span>holol</span></div><h1>Vos ventes du jour, sur votre téléphone.</h1><p>chouf l video, 15 tanya bark 👇</p></header>
+<section class="vid" id="ventes"><h2>Les ventes</h2><p>Une commande, le total tout seul, et la journée sur votre téléphone.</p>
+<video controls playsinline preload="metadata" poster="v/ventes.jpg"><source src="v/ventes.mp4" type="video/mp4"></video></section>
+<section class="vid" id="camera"><h2>La caisse et la caméra</h2><p>Tiroir ouvert sans vente ? Vous voyez le moment.</p>
+<video controls playsinline preload="metadata" poster="v/camera.jpg"><source src="v/camera.mp4" type="video/mp4"></video>
+<p class="note">Mise en scène / exemple. La partie caméra est en test avec quelques commerces.</p></section>
+<div class="reply" id="reply"><p class="hint">Une question ? Répondez simplement dans la conversation WhatsApp 🙂</p></div>
+<footer>Holol · holol.app</footer></main>
+<script>(function(){var w=(new URLSearchParams(location.search).get('wa')||'').replace(/\D/g,'');if(w.length<9)return;var t=encodeURIComponent('Salam, chouft la vidéo Holol, bghit n3ref ktar.');document.getElementById('reply').innerHTML='<a class="btn btn--wa" href="https://wa.me/'+w+'?text='+t+'">Répondre sur WhatsApp</a>';})();</script></body></html>
