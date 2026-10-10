@@ -5,7 +5,7 @@ Static files served through the Cloudflare Worker `holol-demo-links`. This repo 
 | Public URL | File in this repo |
 |---|---|
 | https://demo.holol.app/ | `demo/index.html` (client demo) |
-| https://demo.holol.app/v/ventes.mp4, `/v/camera.mp4` | `demo/v/` |
+| https://demo.holol.app/v/ventes.mp4, `/v/camera.mp4`, `/v/ventes-hd.mp4`, `/v/camera-hd.mp4` (full quality) | `demo/v/` |
 | https://crm.holol.app/<username> | `crm/<username>/index.html` (team page, PIN-locked) |
 
 Team pages hold only ciphertext: leads + reply script are encrypted with AES-GCM, using a key derived from a 6-digit PIN (PBKDF2-SHA256, 600k iterations).
