@@ -22,6 +22,12 @@ The PIN is never committed. The page asks for it once and remembers it on that p
 
 `https://crm.holol.app/<username>` works as soon as GitHub Pages finishes building. The Worker doesn't need to change: it serves any `crm/<username>/` folder that exists and returns 404 for the rest.
 
+### Message style (first messages and reply script)
+
+Darija is written in Arabic script, French words stay in Latin where people naturally mix them. Write in Chaimae's own voice:
+her name and that she is from Kenitra (even for leads in other cities), "I saw your place", what it does for them (less tamara, the day's money clear, grow the place), then the video offer: "إلا بغيتي تفهم كثر نصيفط ليك فيديو لي يشرح ليك كلشي".
+Vary the middle per lead, no dashes, no tech words. Per lead first messages live in `/workspace/holol/leads/chaimae_voice.py` (keyed by lead name, overrides the CSV `message`); the reply script lives in `site.py`.
+
 To change a member's leads, run the same command again (same PIN), then commit.
 To revoke a member, delete their folder and commit.
 
