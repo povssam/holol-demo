@@ -26,7 +26,17 @@ The PIN is never committed. The page asks for it once and remembers it on that p
 
 Darija is written in Arabic script, French words stay in Latin where people naturally mix them. Write in Chaimae's own voice:
 her name and that she is from Kenitra (even for leads in other cities), "I saw your place", what it does for them (less tamara, the day's money clear, grow the place), then the video offer: "إلا بغيتي تفهم كثر نصيفط ليك فيديو لي يشرح ليك كلشي".
-Vary the middle per lead, no dashes, no tech words. Per lead first messages live in `/workspace/holol/leads/chaimae_voice.py` (keyed by lead name, overrides the CSV `message`); the reply script lives in `site.py`.
+No dashes, no tech words. The reply script lives in `site.py`.
+
+### Message variants (A/B/C test)
+
+First messages come in 3 variants, defined in `/workspace/holol/leads/variants.py` (personalized with place name, city and category):
+A = know the day's money without being there, B = less tamara with cash and staff, C = save time and grow the place.
+The leads CSV has `category` and `variant` columns; when `variant` is set, the CSV `message` is sent as is. Variants are assigned round robin over leads sorted by city and category, so each one gets a similar mix.
+Every event from a team page carries the lead's variant, so `https://crm.holol.app/admin` shows a "Message variants" table: Sent (leads sent), Replied (answered آه or لا), Reply rate, Booked.
+
+How to read it: wait for about 10 sends per variant before judging. Reply rate is the main signal, Booked breaks ties. Leads sent before variants existed have no variant and are not counted.
+To retire a losing variant: in the CSV, set the unsent leads that have that variant to one of the remaining variants and rebuild their `message` with `variants.message(...)`, rerun `site.py` (same PIN) and push. Leads already sent keep their variant so past results stay correct. To try a new idea, add a new letter to `T` in `variants.py` and give it to some unsent leads the same way.
 
 To change a member's leads, run the same command again (same PIN), then commit.
 To revoke a member, delete their folder and commit.
